@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiUseSqlite.Dialog.UserInputDialog"
+             Title="新增用户">
+    <VerticalStackLayout Padding="20"
+                         Spacing="15">
+        <Frame BorderColor="LightGray"
+               CornerRadius="10"
+               Padding="15">
+            <VerticalStackLayout Spacing="10">
+                <!-- 用户名 -->
+                <Label Text="用户名:" />
+                <Entry x:Name="UserNameEntry"
+                       Placeholder="请输入用户名" />
+
+                <!-- 密码 -->
+                <Label Text="密码:" />
+                <Entry x:Name="PasswordEntry"
+                       Placeholder="请输入密码"
+                       IsPassword="true" />
+
+                <!-- 权限 -->
+                <Label Text="权限:" />
+                <Entry x:Name="RoleEntry"
+                       Placeholder="请输入权限" />
+
+                <!-- 按钮 -->
+                <Grid ColumnDefinitions="*,*"
+                      ColumnSpacing="10">
+                    <Button Grid.Column="0"
+                            Text="确定"
+                            Clicked="OnConfirmClicked" />
+                    <Button Grid.Column="1"
+                            Text="取消"
+                            Clicked="OnCancelClicked" />
+                </Grid>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
