@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiUrl.MainPage"
+             Title="数据收集">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0"
+                             Spacing="25">
+            <Button x:Name="CounterBtn"
+                    Text="新建数据"
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Clicked="OnCounterClicked"
+                    HorizontalOptions="Fill" />
+
+            <VerticalStackLayout Padding="30,0"
+                                 Spacing="25">
+                <!-- WebView 高度由内容决定 -->
+                <WebView x:Name="webView"
+                         Navigated="WebView_Navigated"
+                         HeightRequest="100" />
+                <!-- 设置初始高度 -->
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
