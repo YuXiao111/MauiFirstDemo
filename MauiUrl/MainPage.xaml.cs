@@ -5,6 +5,7 @@
         public MainPage()
         {
             InitializeComponent();
+            OnOpenBrowser();
         }
 
         private void OnCounterClicked(object sender, EventArgs e)
@@ -15,6 +16,11 @@
         // 按钮点击事件
         private async void OnOpenBrowser()
         {
+            var current = Connectivity.NetworkAccess;
+            if (current != NetworkAccess.Internet)
+            {
+                await DisplayAlert("错误", $"当前网络状态为{current}，无法打开网页。", "确定");
+            }
             string url = "https://jsj.top/f/lccN5S"; // 默认网址
             // 验证 URL 格式
             if (!url.StartsWith("http://") && !url.StartsWith("https://"))
@@ -48,7 +54,7 @@
                 if (double.TryParse(result, out double height))
                 {
                     // 设置WebView高度，增加一些缓冲值
-                    webView.HeightRequest = height + 50;
+                    webView.HeightRequest = height;
 
                     // 在Android上强制布局更新的正确方式
 #if ANDROID

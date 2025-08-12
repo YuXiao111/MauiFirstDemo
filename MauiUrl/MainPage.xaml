@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiUrl.MainPage"
-             Title="数据收集">
+             Title="午餐数据收集">
 
     <ScrollView>
         <VerticalStackLayout Padding="30,0"
@@ -13,7 +13,7 @@
                     Clicked="OnCounterClicked"
                     HorizontalOptions="Fill" />
 
-            <VerticalStackLayout Padding="30,0"
+            <VerticalStackLayout Padding="10,0"
                                  Spacing="25">
                 <!-- WebView 高度由内容决定 -->
                 <WebView x:Name="webView"
